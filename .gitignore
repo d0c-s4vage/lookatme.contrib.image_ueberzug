@@ -1,0 +1,15 @@
+# editors
+.*.sw[mnop]
+
+# python
+*.pyc
+__pycache__
+.mypy_cache
+.tox
+venv*
+.coverage
+*.egg-info
+
+# docs
+docs/build
+docs/source/autodoc
