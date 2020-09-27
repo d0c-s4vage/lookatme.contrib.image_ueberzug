@@ -9,6 +9,7 @@ import ueberzug.lib.v0 as ueberzug
 import urwid_ueberzogen as uw_uz
 
 
+import lookatme.config
 from lookatme.exceptions import IgnoredByContrib
 
 CANVAS = None
@@ -20,12 +21,14 @@ def root_urwid_widget(to_wrap):
 
 
 def image(link_uri, title, text):
-    link_uri = os.path.abspath(os.path.expanduser(link_uri))
-    if not os.path.exists(link_uri):
+    base_dir = lookatme.config.SLIDE_SOURCE_DIR
+    full_path = os.path.join(base_dir, link_uri)
+
+    if not os.path.exists(full_path):
         raise Exception("Local files only for images! (for now) {!r}".format(link_uri))
     placement = CANVAS.create_placement(
         time.time(),
-        path=link_uri,
+        path=full_path,
         scaler=ueberzug.ScalerOption.FIT_CONTAIN.value,
     )
     try:
