@@ -1,0 +1,3 @@
+git+https://github.com/d0c-s4vage/lookatme.git@feature/101-allow_inline_render_fns_widget#egg=lookatme
+git+https://github.com/d0c-s4vage/urwid-ueberzogen.git#egg=urwid_ueberzogen
+ueberzug>=18,<19

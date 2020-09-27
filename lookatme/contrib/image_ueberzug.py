@@ -22,7 +22,7 @@ def root_urwid_widget(to_wrap):
 def image(link_uri, title, text):
     link_uri = os.path.abspath(os.path.expanduser(link_uri))
     if not os.path.exists(link_uri):
-        raise Exception("Local files only for images! (for now)")
+        raise Exception("Local files only for images! (for now) {!r}".format(link_uri))
     placement = CANVAS.create_placement(
         time.time(),
         path=link_uri,

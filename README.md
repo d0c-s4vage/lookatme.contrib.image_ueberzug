@@ -18,12 +18,12 @@ To test it out:
 * Try to render an image!
 
 ```
-git clone https://github.com/d0c-s4vage/lookatme
-(cd lookatme && git pull origin feature/101-allow_inline_render_fns_widget && git checkout feature/101-allow_inline_render_fns_widget)
 git clone https://github.com/d0c-s4vage/lookatme.contrib.image_ueberzug
+cd lookatme.contrib.image_ueberzug
 virtualenv /tmp/venv
 . /tmp/venv/bin/activate
-pip install ./lookatme ./lookatme.contrib.image_ueberzug
+pip install -r requirements.txt
+lookatme example/galaxies.md
 ```
 
 ## Installation
