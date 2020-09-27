@@ -10,21 +10,20 @@ to provide image rendering support.
 This extension is very much still a proof of concept and relies on lookatme
 features that haven't been released.
 
-To test it out:
-
-* Checkout the lookatme branch `feature/101-allow_inline_render_fns_widget`
-* Install lookatme into a virtual environment
-* Install this extension
-* Try to render an image!
+Run the commands below to test it out locally:
 
 ```
 git clone https://github.com/d0c-s4vage/lookatme.contrib.image_ueberzug
 cd lookatme.contrib.image_ueberzug
 virtualenv /tmp/venv
 . /tmp/venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.txt .
 lookatme example/galaxies.md
 ```
+
+You should see something like this:
+
+![example](example/running.gif)
 
 ## Installation
 
