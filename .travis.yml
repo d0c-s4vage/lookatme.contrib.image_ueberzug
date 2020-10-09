@@ -5,8 +5,7 @@ python:
 install:
 - export VERSION=$(sed 's/^v//' <<<"${TRAVIS_TAG:-0.0.0+$(sed 's^[/_-]^.^g' <<<$TRAVIS_BRANCH)}")
 - find . -type f -exec sed -i "s/{{VERSION}}/${VERSION}/g" {} \;
-- pip install tox
-script: tox
+script: echo hello
 deploy:
   provider: pypi
   password:
