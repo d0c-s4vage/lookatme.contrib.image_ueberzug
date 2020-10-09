@@ -21,3 +21,11 @@ pip install lookatme.contrib.image_ueberzug
 
 Use images! For now, only local images are supported. Remote image support
 will be added later.
+
+Use the text of the image to indicate the height (number of rows) that the
+image should use when rendered. The example below will render
+`path/to/image.png` with a height of `7` rows:
+
+```
+![7](path/to/image.png)
+```
