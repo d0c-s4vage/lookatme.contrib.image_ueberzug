@@ -14,11 +14,11 @@ with open(req_path, "r") as f:
 
 setup(
     name="lookatme.contrib.image_ueberzug",
-    version="0.0.0",
+    version="{{VERSION}}",
     description="An image renderer that uses ueberzug",
     author="",
     author_email="",
     python_requires=">=3.5",
     packages=find_namespace_packages(include=["lookatme.*"]),
-    #install_requires=required,
+    install_requires=required,
 )

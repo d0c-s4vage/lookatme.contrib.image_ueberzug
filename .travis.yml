@@ -1,0 +1,18 @@
+language: python
+python:
+- '3.6'
+- '3.7'
+install:
+- export VERSION=$(sed 's/^v//' <<<"${TRAVIS_TAG:-0.0.0+$(sed 's^[/_-]^.^g' <<<$TRAVIS_BRANCH)}")
+- find . -type f -exec sed -i "s/{{VERSION}}/${VERSION}/g" {} \;
+- pip install tox
+script: tox
+deploy:
+  provider: pypi
+  password:
+    secure: "secure: BWlg4CLNj8D9/V5yIT1MjHICLSLG7DKCNWmTbYhNJFpFuojqiZsuwak12Kdd+PnQU2vkmy9J+DeqrKDzUSlMoEROjNO60o7Fwv2Ei1kayJTRITP51rnpu6ej+lalH/7dYfDmMVdlu4tuZNTov5SHyEWu880rF2iCuN+2+aeC33cH9iSwJRR29jKWfvpxz15o3JTXAskTxvIGNlD7yiIDJTBNq6fbf5OsJKwv2HPahjQABiUvElpqcELNRSjX77B737Rtf4l7b8ARfEFfgnYzm7XUtoUcBnzr4FwCubYQPhS7viFlVa5I0KLZf4V/fYNlp8aqG/Vp9wsQvcQF+ehJLvXNTm9h5cMU5VLxMiu60EIIvGgIrVXN+biFtvAt7vkpKoosaz2F5aQZdl4mFYiRYK2wf8hVKLuEfZiLaYf/RmBuSRxNez1+K6j0lZx/Ln55i6hUKFo1WgnsuyzalpFsou7b10opFeYAa9asH3nZKj/mLmnakntp7wi6ylEAAtxv5uHHoUOP4LIiexcwkfhmt+UJ5mbXGwOyLtMWVhDtXCfeEttlXw67NNHMfgbyR2OKOL0EuYlVByV5KXUzwDpzKDTig/XpqUvRU8n4q387BwUxxi+pOc6RSARc4C00kFrtS9ej1eUIouU9l3w93fGfnHLl05I0v430kGhdgYQncWc="
+  skip_cleanup: true
+  skip_existing: true
+  user: d0c.s4vage
+  on:
+    tags: true
