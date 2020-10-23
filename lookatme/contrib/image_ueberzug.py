@@ -14,6 +14,13 @@ from lookatme.exceptions import IgnoredByContrib
 
 CANVAS = None
 
+
+def user_warnings():
+    """No user warnings for this extension
+    """
+    return []
+
+
 def root_urwid_widget(to_wrap):
     global CANVAS
     CANVAS = ueberzug.Canvas().__enter__()
